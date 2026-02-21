@@ -37,7 +37,7 @@
           variant="gradient"
           indicator="+12% за последний месяц"
           value="$ 278 000 000"
-          label="Совокупный капитал экосистемы MGF"
+          label="Совокупный капитал <br /> экосистемы MGF"
         />
         <GmStatCard variant="default" indicator="8%" value="20+" label="стран международной сети" />
         <GmStatCard
@@ -145,15 +145,15 @@ import UiTitle from '~/components/UI/UiTitle.vue'
   }
 
   &__stats-heading {
-    margin-bottom: 0.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
   }
 
   &__stats-subtitle {
     font-family: var(--font-family);
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 2rem;
-    max-width: 560px;
+    margin: 0 0 30px;
   }
 
   &__cards {

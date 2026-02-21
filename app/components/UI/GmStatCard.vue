@@ -18,7 +18,7 @@
       {{ indicator }}
     </span>
     <span class="gm-stat-card__value">{{ value }}</span>
-    <span class="gm-stat-card__label">{{ label }}</span>
+    <span class="gm-stat-card__label" v-html="label" />
   </GmCard>
 </template>
 
@@ -78,6 +78,7 @@ withDefaults(
     font-weight: 700;
     color: #fff;
     text-align: left;
+    margin-bottom: 4px;
   }
 
   &__label {
