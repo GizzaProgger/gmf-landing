@@ -1,11 +1,11 @@
 <template>
   <section class="hero-index">
     <div class="hero-index__content">
-      <span class="hero-index__brand">MGF</span>
-      <h1 class="hero-index__title">
+      <UiTitle :level="1" variant="brand" class="hero-index__brand">MGF</UiTitle>
+      <UiTitle :level="1" class="hero-index__title">
         Международная деловая<br />
         экосистема мусульман
-      </h1>
+      </UiTitle>
       <p class="hero-index__lead">
         Объединяем предпринимателей, инвесторов и экспертов, создающих халяльный бизнес ради
         довольства Аллаха.
@@ -40,6 +40,7 @@
 <script setup lang="ts">
 import ArrowRightIcon from '~/components/Icons/ArrowRightIcon.vue'
 import GmButton from '~/components/UI/GmButton.vue'
+import UiTitle from '~/components/UI/UiTitle.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -61,22 +62,11 @@ import GmButton from '~/components/UI/GmButton.vue'
 }
 
 .hero-index__brand {
-  font-size: 100px;
-  font-weight: 700;
-  line-height: 1.1;
-  background: var(--main-background);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 0 0 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .hero-index__title {
-  font-size: 54px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
-  margin: 0 0 8px;
+  margin-bottom: 8px;
 }
 
 .hero-index__lead {
