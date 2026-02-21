@@ -27,7 +27,7 @@
         </GmCard>
       </div>
       <GmCard variant="default" class="index-why-mgf__image-card">
-        <img
+        <NuxtPicture
           class="index-why-mgf__image"
           src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80"
           alt=""
@@ -103,7 +103,7 @@ const items = [
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 
   @include below($bp-desktop) {
     grid-template-columns: 1fr;
@@ -132,6 +132,7 @@ const items = [
 
 .index-why-mgf__icon {
   color: var(--main-color);
+  margin-bottom: var(--gap-6);
 }
 
 .index-why-mgf__group-svg {
@@ -145,7 +146,7 @@ const items = [
   font-weight: 700;
   color: var(--main-color);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1;
 }
 
 .index-why-mgf__link {
@@ -160,6 +161,9 @@ const items = [
   overflow: hidden;
   border-radius: var(--default-border-radius);
   min-height: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   @include below($bp-desktop) {
     min-height: 240px;
@@ -167,14 +171,20 @@ const items = [
 }
 
 .index-why-mgf__image {
+  display: block;
+  flex: 1;
+  min-height: 0;
   width: 100%;
   height: 100%;
-  min-height: 280px;
-  object-fit: cover;
-  vertical-align: middle;
+  position: relative;
 
-  @include below($bp-desktop) {
-    min-height: 240px;
+  :deep(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 }
 </style>
