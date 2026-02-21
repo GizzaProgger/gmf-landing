@@ -52,22 +52,15 @@
           value="350+"
           label="успешных партнёрств между участниками MGF"
         />
+        <div class="index-opportunities__project-card">
+          <GmStatCard
+            variant="gradient"
+            indicator="+12% за последний месяц"
+            value="Закрыто более $ 8 000 000 задолжностей"
+            :label="projectLabel"
+          />
+        </div>
       </div>
-
-      <GmCard variant="gradient" class="index-opportunities__project-card">
-        <span class="index-opportunities__project-indicator">
-          <ArrowUpIcon />
-          +12% за последний месяц
-        </span>
-        <UiTitle level="2" class="index-opportunities__project-title">
-          Главный проект «Фонд поддержки должников»
-        </UiTitle>
-        <p class="index-opportunities__project-desc">
-          Система помощи мусульманам, оказавшимся в финансовой трудности — ради довольства Аллаха и
-          укрепления уммы.
-        </p>
-        <p class="index-opportunities__project-value">Закрыто более $ 8 000 000 задолжностей</p>
-      </GmCard>
       <GmButton to="#project" variant="primary" class="index-opportunities__cta">
         Подробнее о проекте
         <template #after>
@@ -80,11 +73,12 @@
 
 <script setup lang="ts">
 import ArrowRightIcon from '~/components/Icons/ArrowRightIcon.vue'
-import ArrowUpIcon from '~/components/Icons/ArrowUpIcon.vue'
 import GmButton from '~/components/UI/GmButton.vue'
-import GmCard from '~/components/UI/GmCard.vue'
 import GmStatCard from '~/components/UI/GmStatCard.vue'
 import UiTitle from '~/components/UI/UiTitle.vue'
+
+const projectLabel =
+  'Главный проект «Фонд поддержки должников». Система помощи мусульманам, оказавшимся в финансовой трудности — ради довольства Аллаха и укрепления уммы.'
 </script>
 
 <style lang="scss" scoped>
@@ -161,7 +155,6 @@ import UiTitle from '~/components/UI/UiTitle.vue'
     grid-template-columns: 4fr 3fr 3fr 3fr;
     gap: 1.5rem;
     width: 100%;
-    margin-bottom: 50px;
 
     @include below($bp-desktop) {
       grid-template-columns: repeat(2, 1fr);
@@ -172,43 +165,12 @@ import UiTitle from '~/components/UI/UiTitle.vue'
     }
   }
 
-  &__project {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
   &__project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 2.5rem;
-  }
+    grid-column: 1 / -1;
 
-  &__project-indicator {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  &__project-title {
-    margin: 0;
-  }
-
-  &__project-desc {
-    font-family: var(--font-family);
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-  }
-
-  &__project-value {
-    font-size: var(--title-h2-size);
-    font-weight: 700;
-    color: #fff;
-    margin: 0.5rem 0 0;
+    :deep(.gm-stat-card) {
+      padding: 2.5rem;
+    }
   }
 
   &__cta {
