@@ -59,14 +59,14 @@
             value="Закрыто более $ 8 000 000 задолжностей"
             :label="projectLabel"
           />
+          <GmButton to="#project" variant="primary" class="index-opportunities__cta">
+            Подробнее о проекте
+            <template #after>
+              <ArrowRightIcon />
+            </template>
+          </GmButton>
         </div>
       </div>
-      <GmButton to="#project" variant="primary" class="index-opportunities__cta">
-        Подробнее о проекте
-        <template #after>
-          <ArrowRightIcon />
-        </template>
-      </GmButton>
     </section>
   </div>
 </template>
@@ -167,6 +167,9 @@ const projectLabel =
 
   &__project-card {
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
     :deep(.gm-stat-card) {
       padding: 2.5rem;
@@ -175,6 +178,7 @@ const projectLabel =
 
   &__cta {
     align-self: flex-start;
+    margin-top: auto;
   }
 }
 </style>
