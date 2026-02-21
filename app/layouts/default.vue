@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout">
     <AppHeader class="app-header" />
     <main>
       <slot />
@@ -9,8 +9,18 @@
 
 <script setup></script>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '~/assets/scss/vars' as *;
+
+.layout {
+  overflow-x: hidden;
+}
+
 .app-header {
   margin-top: 67px;
+
+  @include below($bp-desktop) {
+    margin-top: 24px;
+  }
 }
 </style>

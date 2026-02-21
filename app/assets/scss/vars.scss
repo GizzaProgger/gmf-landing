@@ -1,3 +1,6 @@
+@use './mixins' as *;
+@forward './mixins';
+
 @font-face {
   font-family: 'Sora';
   src: url('../fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
@@ -22,4 +25,9 @@ body {
   --default-border-width: 1px;
   --default-border-style: solid;
   --default-border-color: var(--main-color);
+
+  --bp-mobile: #{$bp-mobile};
+  --bp-tablet: #{$bp-tablet};
+  --bp-desktop: #{$bp-desktop};
+  --bp-wide: #{$bp-wide};
 }
