@@ -1,6 +1,5 @@
 <template>
   <section class="hero-index">
-    <div class="hero-index__bg" aria-hidden="true" />
     <div class="hero-index__content">
       <span class="hero-index__brand">MGF</span>
       <h1 class="hero-index__title">
@@ -54,11 +53,6 @@ import GmButton from '~/components/UI/GmButton.vue'
   padding: 2rem 1.5rem 4rem;
   overflow: hidden;
   max-width: 1038px;
-}
-
-.hero-index__bg {
-  position: absolute;
-  inset: 0;
 }
 
 .hero-index__content {
