@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  css: [
+    '~/assets/scss/reset.scss',
+    '~/assets/scss/global.scss'
+  ],
+
   modules: [
     '@nuxt/a11y',
     '@nuxt/eslint',
