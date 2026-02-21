@@ -1,5 +1,6 @@
 @use './vars' as *;
 
 body {
-    background: var(--body-background);
+  font-family: var(--font-family);
+  background: var(--body-background);
 }

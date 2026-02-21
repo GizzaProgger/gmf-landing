@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { resolveComponent } from 'vue'
+
 withDefaults(
   defineProps<{
     variant?: 'primary' | 'secondary'
@@ -6,28 +8,39 @@ withDefaults(
     /** Показывать иконку стрелки в круге справа */
     icon?: boolean
     type?: 'button' | 'submit' | 'reset'
+    /** Если задано — рендерится как NuxtLink */
+    to?: string
   }>(),
   {
     variant: 'primary',
     disabled: false,
     icon: true,
     type: 'button',
+    to: undefined
   }
 )
 </script>
 
 <template>
-  <button
-    :type="type"
+  <component
+    :is="to ? resolveComponent('NuxtLink') : 'button'"
+    :to="to"
+    :type="to ? undefined : type"
     class="gm-button"
     :class="[`gm-button--${variant}`, { 'gm-button--disabled': disabled }]"
-    :disabled="disabled"
+    :disabled="to ? undefined : disabled"
   >
     <span class="gm-button__text">
       <slot />
     </span>
     <span v-if="icon" class="gm-button__icon" aria-hidden="true">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M10 6L16 12L10 18"
           stroke="currentColor"
@@ -37,7 +50,7 @@ withDefaults(
         />
       </svg>
     </span>
-  </button>
+  </component>
 </template>
 
 <style lang="scss" scoped>
@@ -61,11 +74,10 @@ withDefaults(
   font-weight: 400;
   line-height: 1.25;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-
-  &__text {
-    flex-shrink: 0;
-  }
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 
   &__icon {
     display: inline-flex;
@@ -82,6 +94,10 @@ withDefaults(
     }
   }
 
+  &__text {
+    color: var(--main-text-color);
+  }
+
   // Primary: золотой градиент, тёмный текст, чёрный круг + белая стрелка
   &--primary {
     background: var(--main-background);
@@ -93,7 +109,9 @@ withDefaults(
     }
 
     &:hover:not(.gm-button--disabled) {
-      box-shadow: 0 0 20px rgba(232, 196, 99, 0.5), 0 0 40px rgba(232, 196, 99, 0.25);
+      box-shadow:
+        0 0 20px rgba(232, 196, 99, 0.5),
+        0 0 40px rgba(232, 196, 99, 0.25);
     }
   }
 

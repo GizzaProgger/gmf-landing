@@ -1,40 +1,34 @@
 <template>
-  <header class="app-header">
-    <NuxtLink to="/" class="app-header__logo" aria-label="Muslim Global Finance — на главную">
-      <IconsMainLogo class="app-header__logo-img" />
-    </NuxtLink>
-
-    <nav class="app-header__nav" aria-label="Основное меню">
-      <NuxtLink to="/" class="app-header__link">{{ navItems[0] }}</NuxtLink>
-      <NuxtLink to="/about" class="app-header__link">{{ navItems[1] }}</NuxtLink>
-      <NuxtLink to="/projects" class="app-header__link">{{ navItems[2] }}</NuxtLink>
-      <NuxtLink to="/strategies" class="app-header__link">{{ navItems[3] }}</NuxtLink>
-      <NuxtLink to="/useful-people" class="app-header__link">{{ navItems[4] }}</NuxtLink>
-      <NuxtLink to="/news" class="app-header__link">{{ navItems[5] }}</NuxtLink>
-      <NuxtLink to="/contacts" class="app-header__link">{{ navItems[6] }}</NuxtLink>
-    </nav>
-
-    <div class="app-header__actions">
-      <button
-        type="button"
-        class="app-header__lang"
-        aria-label="Выбор языка или региона"
-      >
-        <IconsWorldIcon class="app-header__lang-icon" />
-      </button>
-      <NuxtLink to="/join" class="app-header__cta">
-        <span class="app-header__cta-text">Вступить в MGF</span>
-        <span class="app-header__cta-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
-          </svg>
-        </span>
+  <GmContainer>
+    <header class="app-header">
+      <NuxtLink to="/" class="app-header__logo" aria-label="Muslim Global Finance — на главную">
+        <IconsMainLogo class="app-header__logo-img" />
       </NuxtLink>
-    </div>
-  </header>
+
+      <nav class="app-header__nav" aria-label="Основное меню">
+        <NuxtLink to="/" class="app-header__link">{{ navItems[0] }}</NuxtLink>
+        <NuxtLink to="/about" class="app-header__link">{{ navItems[1] }}</NuxtLink>
+        <NuxtLink to="/projects" class="app-header__link">{{ navItems[2] }}</NuxtLink>
+        <NuxtLink to="/strategies" class="app-header__link">{{ navItems[3] }}</NuxtLink>
+        <NuxtLink to="/useful-people" class="app-header__link">{{ navItems[4] }}</NuxtLink>
+        <NuxtLink to="/news" class="app-header__link">{{ navItems[5] }}</NuxtLink>
+        <NuxtLink to="/contacts" class="app-header__link">{{ navItems[6] }}</NuxtLink>
+      </nav>
+
+      <div class="app-header__actions">
+        <button type="button" class="app-header__lang" aria-label="Выбор языка или региона">
+          <IconsWorldIcon class="app-header__lang-icon" />
+        </button>
+        <GmButton to="/join" class="app-header__cta"> Вступить в MGF </GmButton>
+      </div>
+    </header>
+  </GmContainer>
 </template>
 
 <script setup lang="ts">
+import GmContainer from './UI/GmContainer.vue'
+import GmButton from './UI/GmButton.vue'
+
 const navItems = [
   'ГЛАВНАЯ',
   'О НАС',
@@ -42,7 +36,7 @@ const navItems = [
   'СТРАТЕГИИ',
   'ПОЛЕЗНЫЕ ЛЮДИ',
   'НОВОСТИ',
-  'КОНТАКТЫ',
+  'КОНТАКТЫ'
 ]
 </script>
 
@@ -59,7 +53,6 @@ const navItems = [
   gap: 1.5rem;
   min-height: var(--header-height);
   padding: 0 var(--header-padding-x);
-  background: var(--secondary-background);
 
   &__logo {
     flex-shrink: 0;
@@ -132,7 +125,9 @@ const navItems = [
     background: transparent;
     cursor: pointer;
     color: var(--main-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:hover {
       transform: scale(1.05);
@@ -162,10 +157,14 @@ const navItems = [
     font-weight: 500;
     text-decoration: none;
     box-shadow: 0 2px 12px rgba(204, 138, 17, 0.35);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
 
     &:hover {
-      box-shadow: 0 4px 20px rgba(204, 138, 17, 0.45), 0 0 24px rgba(232, 196, 99, 0.2);
+      box-shadow:
+        0 4px 20px rgba(204, 138, 17, 0.45),
+        0 0 24px rgba(232, 196, 99, 0.2);
       transform: translateY(-1px);
     }
 
