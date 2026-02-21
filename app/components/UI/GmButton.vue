@@ -100,9 +100,7 @@ withDefaults(
     }
 
     &:hover:not(.gm-button--disabled) {
-      box-shadow:
-        0 0 20px rgba(232, 196, 99, 0.5),
-        0 0 40px rgba(232, 196, 99, 0.25);
+      box-shadow: var(--default-shadow);
     }
   }
 

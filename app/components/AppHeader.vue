@@ -158,7 +158,7 @@ const navItems = [
     font-size: 0.9375rem;
     font-weight: 500;
     text-decoration: none;
-    box-shadow: 0 2px 12px rgba(204, 138, 17, 0.35);
+    box-shadow: var(--default-shadow);
     transition:
       box-shadow 0.2s ease,
       transform 0.2s ease;
