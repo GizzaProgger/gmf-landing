@@ -10,7 +10,7 @@
           <button type="button" class="app-header__lang" aria-label="Выбор языка или региона">
             <IconsWorldIcon class="app-header__lang-icon" />
           </button>
-          <GmButton to="/join" class="app-header__cta" size="mini" variant="primary-inverted">
+          <GmButton to="/join" class="app-header__cta" size="mini" variant="primary">
             Вступить в MGF <IconsProfileIcon class="app-header__profile-icon" />
           </GmButton>
         </template>

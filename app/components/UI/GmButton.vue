@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    variant?: 'primary' | 'primary-inverted' | 'secondary'
+    variant?: 'primary' | 'secondary'
     size?: 'default' | 'mini'
     disabled?: boolean
     type?: 'button' | 'submit' | 'reset'
@@ -82,6 +82,13 @@ withDefaults(
     background 0.2s ease,
     transform 0.2s ease;
 
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+  }
+
   &:focus-visible {
     outline: 2px solid var(--main-color);
     outline-offset: 2px;
@@ -102,42 +109,23 @@ withDefaults(
     }
   }
 
-  &__text {
-    color: var(--main-text-color);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-  }
-
   // Primary: золотой градиент, тёмный текст, чёрный круг + белая стрелка
   &--primary {
     background: var(--main-background);
     color: #1a1a1a;
+
+    .gm-button__text {
+      color: var(--main-text-color);
+    }
 
     .gm-button__icon {
       background: #000;
       color: #fff;
     }
 
-    &:not(.gm-button--disabled) {
-      transform: translateY(-1px);
-    }
-  }
-
-  // Primary на тёмном фоне: тот же градиент, белый текст, полупрозрачный круг у иконки
-  &--primary-inverted {
-    background: var(--main-background);
-    color: #fff;
-
-    .gm-button__icon {
-      background: rgba(255, 255, 255, 0.25);
-      color: #fff;
-    }
-
     &:hover:not(.gm-button--disabled) {
       box-shadow:
-        0 4px 20px rgba(204, 138, 17, 0.45),
+        -1px 1px 9px 3px rgba(204, 138, 17, 0.45),
         0 0 24px rgba(232, 196, 99, 0.2);
       transform: translateY(-1px);
     }
