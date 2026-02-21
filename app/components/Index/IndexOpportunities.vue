@@ -158,7 +158,7 @@ import UiTitle from '~/components/UI/UiTitle.vue'
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 4fr 3fr 3fr 3fr;
     gap: 1.5rem;
     width: 100%;
     margin-bottom: 50px;
