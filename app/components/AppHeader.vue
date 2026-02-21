@@ -19,7 +19,7 @@
         <button type="button" class="app-header__lang" aria-label="Выбор языка или региона">
           <IconsWorldIcon class="app-header__lang-icon" />
         </button>
-        <GmButton to="/join" class="app-header__cta" size="mini">
+        <GmButton to="/join" class="app-header__cta" size="mini" variant="primary-inverted">
           Вступить в MGF <IconsProfileIcon class="app-header__profile-icon" />
         </GmButton>
       </div>
@@ -147,53 +147,5 @@ const navItems = [
     height: 42px;
   }
 
-  &__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.25rem 0.75rem 1.5rem;
-    border-radius: 9999px;
-    background: var(--main-background);
-    color: #fff;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    text-decoration: none;
-    box-shadow: var(--default-shadow);
-    transition:
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-
-    &:hover {
-      box-shadow:
-        0 4px 20px rgba(204, 138, 17, 0.45),
-        0 0 24px rgba(232, 196, 99, 0.2);
-      transform: translateY(-1px);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--main-color);
-      outline-offset: 2px;
-    }
-  }
-
-  :deep(.app-header__cta) {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  &__cta-text {
-    flex-shrink: 0;
-  }
-
-  &__cta-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    flex-shrink: 0;
-  }
 }
 </style>

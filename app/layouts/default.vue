@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader />
+    <AppHeader class="app-header" />
     <main>
       <slot />
     </main>
@@ -10,7 +10,7 @@
 <script setup></script>
 
 <style scoped>
-main {
-  padding: 1rem;
+.app-header {
+  margin-top: 67px;
 }
 </style>

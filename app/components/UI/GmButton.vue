@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { resolveComponent } from 'vue'
-
 withDefaults(
   defineProps<{
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'primary-inverted' | 'secondary'
     size?: 'default' | 'mini'
     disabled?: boolean
     type?: 'button' | 'submit' | 'reset'
@@ -21,13 +19,11 @@ withDefaults(
 </script>
 
 <template>
-  <component
-    :is="to ? resolveComponent('NuxtLink') : 'button'"
+  <NuxtLink
+    v-if="to"
     :to="to"
-    :type="to ? undefined : type"
     class="gm-button"
     :class="[`gm-button--${variant}`, `gm-button--${size}`, { 'gm-button--disabled': disabled }]"
-    :disabled="to ? undefined : disabled"
   >
     <span v-if="$slots.before" class="gm-button__icon" aria-hidden="true">
       <slot name="before" />
@@ -38,7 +34,24 @@ withDefaults(
     <span v-if="$slots.after" class="gm-button__icon" aria-hidden="true">
       <slot name="after" />
     </span>
-  </component>
+  </NuxtLink>
+  <button
+    v-else
+    :type="type"
+    class="gm-button"
+    :class="[`gm-button--${variant}`, `gm-button--${size}`, { 'gm-button--disabled': disabled }]"
+    :disabled="disabled"
+  >
+    <span v-if="$slots.before" class="gm-button__icon" aria-hidden="true">
+      <slot name="before" />
+    </span>
+    <span class="gm-button__text">
+      <slot />
+    </span>
+    <span v-if="$slots.after" class="gm-button__icon" aria-hidden="true">
+      <slot name="after" />
+    </span>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -62,10 +75,17 @@ withDefaults(
   font-weight: 400;
   line-height: 1.25;
   cursor: pointer;
+  text-decoration: none;
   transition:
     box-shadow 0.2s ease,
     border-color 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+  }
 
   &__icon {
     display: inline-flex;
@@ -87,6 +107,7 @@ withDefaults(
     display: flex;
     align-items: center;
     gap: 8px;
+    font-weight: 500;
   }
 
   // Primary: золотой градиент, тёмный текст, чёрный круг + белая стрелка
@@ -99,8 +120,26 @@ withDefaults(
       color: #fff;
     }
 
+    &:not(.gm-button--disabled) {
+      transform: translateY(-1px);
+    }
+  }
+
+  // Primary на тёмном фоне: тот же градиент, белый текст, полупрозрачный круг у иконки
+  &--primary-inverted {
+    background: var(--main-background);
+    color: #fff;
+
+    .gm-button__icon {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
     &:hover:not(.gm-button--disabled) {
-      box-shadow: var(--default-shadow);
+      box-shadow:
+        0 4px 20px rgba(204, 138, 17, 0.45),
+        0 0 24px rgba(232, 196, 99, 0.2);
+      transform: translateY(-1px);
     }
   }
 
