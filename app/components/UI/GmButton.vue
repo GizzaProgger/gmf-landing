@@ -4,17 +4,16 @@ import { resolveComponent } from 'vue'
 withDefaults(
   defineProps<{
     variant?: 'primary' | 'secondary'
+    size?: 'default' | 'mini'
     disabled?: boolean
-    /** Показывать иконку стрелки в круге справа */
-    icon?: boolean
     type?: 'button' | 'submit' | 'reset'
     /** Если задано — рендерится как NuxtLink */
     to?: string
   }>(),
   {
     variant: 'primary',
+    size: 'default',
     disabled: false,
-    icon: true,
     type: 'button',
     to: undefined
   }
@@ -27,28 +26,17 @@ withDefaults(
     :to="to"
     :type="to ? undefined : type"
     class="gm-button"
-    :class="[`gm-button--${variant}`, { 'gm-button--disabled': disabled }]"
+    :class="[`gm-button--${variant}`, `gm-button--${size}`, { 'gm-button--disabled': disabled }]"
     :disabled="to ? undefined : disabled"
   >
+    <span v-if="$slots.before" class="gm-button__icon" aria-hidden="true">
+      <slot name="before" />
+    </span>
     <span class="gm-button__text">
       <slot />
     </span>
-    <span v-if="icon" class="gm-button__icon" aria-hidden="true">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M10 6L16 12L10 18"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+    <span v-if="$slots.after" class="gm-button__icon" aria-hidden="true">
+      <slot name="after" />
     </span>
   </component>
 </template>
@@ -96,6 +84,9 @@ withDefaults(
 
   &__text {
     color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   // Primary: золотой градиент, тёмный текст, чёрный круг + белая стрелка
@@ -129,6 +120,23 @@ withDefaults(
     &:hover:not(.gm-button--disabled) {
       border-color: var(--main-color);
       box-shadow: 0 0 0 1px var(--main-color);
+    }
+  }
+
+  &--mini {
+    --btn-padding-x: 16px;
+    --btn-padding-y: 4px;
+    --btn-gap: 0.5rem;
+    font-size: 0.875rem;
+
+    .gm-button__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      svg {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
     }
   }
 

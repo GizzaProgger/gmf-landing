@@ -19,7 +19,9 @@
         <button type="button" class="app-header__lang" aria-label="Выбор языка или региона">
           <IconsWorldIcon class="app-header__lang-icon" />
         </button>
-        <GmButton to="/join" class="app-header__cta"> Вступить в MGF </GmButton>
+        <GmButton to="/join" class="app-header__cta" size="mini">
+          Вступить в MGF <IconsProfileIcon class="app-header__profile-icon" />
+        </GmButton>
       </div>
     </header>
   </GmContainer>
@@ -141,8 +143,8 @@ const navItems = [
   }
 
   &__lang-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
   }
 
   &__cta {
@@ -172,6 +174,11 @@ const navItems = [
       outline: 2px solid var(--main-color);
       outline-offset: 2px;
     }
+  }
+
+  :deep(.app-header__cta) {
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 
   &__cta-text {
