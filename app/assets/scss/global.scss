@@ -1,1 +1,5 @@
 @use './vars' as *;
+
+body {
+    background: var(--body-background);
+}

@@ -1,4 +1,13 @@
 body {
+    --body-background: #181A1C;
+    
     --main-color: #E8C463;
     --main-background: linear-gradient(38deg, #CC8A11 -0.96%, #F9D161 50.37%, #DEA530 96.56%);
+    --secondary-background: #212121;
+
+    --default-border-radius: 20px;
+    --default-border-width: 1px;
+    --default-border-style: solid;
+    --default-border-color: var(--main-color);
+    
 }
