@@ -120,7 +120,6 @@ const projectLabel =
   }
 
   &__text {
-    font-family: var(--font-family);
     font-size: 18px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
@@ -144,7 +143,6 @@ const projectLabel =
   }
 
   &__stats-subtitle {
-    font-family: var(--font-family);
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 30px;

@@ -28,7 +28,6 @@ withDefaults(
   gap: 0.5rem;
 
   &__stage {
-    font-family: var(--font-family);
     font-size: var(--title-h4-size);
 
     font-weight: 500;
@@ -37,7 +36,6 @@ withDefaults(
   }
 
   &__title {
-    font-family: var(--font-family);
     font-size: var(--title-h3-size);
 
     font-weight: 700;
@@ -46,7 +44,6 @@ withDefaults(
   }
 
   &__desc {
-    font-family: var(--font-family);
     font-size: var(--title-h6-size);
     line-height: 1.45;
     color: rgba(255, 255, 255, 0.9);

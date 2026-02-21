@@ -31,7 +31,6 @@ const tag = computed(() => `h${levelNum.value}`)
 @use '~/assets/scss/vars' as *;
 
 .ui-title {
-  font-family: var(--font-family);
   font-weight: 700;
   line-height: 1.2;
   margin: 0;

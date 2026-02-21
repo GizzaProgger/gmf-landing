@@ -70,7 +70,6 @@ import UiTitle from '~/components/UI/UiTitle.vue'
 }
 
 .hero-index__lead {
-  font-family: var(--font-family);
   font-size: 35px;
   font-weight: 400;
   line-height: 1.4;
@@ -79,7 +78,6 @@ import UiTitle from '~/components/UI/UiTitle.vue'
 }
 
 .hero-index__desc {
-  font-family: var(--font-family);
   font-size: 30px;
   font-weight: 400;
   line-height: 1.4;
