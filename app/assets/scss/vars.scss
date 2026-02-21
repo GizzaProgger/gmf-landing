@@ -35,6 +35,18 @@ body {
   --default-border-style: solid;
   --default-border-color: var(--main-color);
 
+  /* Gap scale (rem). Use for flex/grid gap, consistent spacing. */
+  --gap-1: 0.25rem;   /* 4px — плотные группы (иконка + текст) */
+  --gap-2: 0.5rem;   /* 8px — кнопки small, карточки шагов */
+  --gap-3: 0.75rem;  /* 12px — кнопки default, узкие блоки */
+  --gap-4: 1rem;     /* 16px — hero CTA, пункты меню */
+  --gap-5: 1.5rem;   /* 24px — хедер, карточки, как работает */
+  --gap-6: 2rem;     /* 32px — грид возможностей, блоки меню */
+  --gap-8: 4rem;     /* 64px — между крупными блоками */
+  --gap-10: 4.25rem; /* 68px — секции в Opportunities */
+  --gap-12: 6rem;    /* 96px */
+  --gap-15: 9.375rem; /* 150px — секции на главной (page sections) */
+
   --bp-mobile: #{$bp-mobile};
   --bp-tablet: #{$bp-tablet};
   --bp-desktop: #{$bp-desktop};

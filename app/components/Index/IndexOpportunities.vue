@@ -88,12 +88,12 @@ const projectLabel =
 .index-opportunities {
   display: flex;
   flex-direction: column;
-  gap: 68px;
+  gap: var(--gap-10);
 
   &__intro {
     display: grid;
     grid-template-columns: 277px auto 1fr;
-    gap: 2rem;
+    gap: var(--gap-6);
     align-items: center;
 
     @include below($bp-tablet) {
@@ -153,7 +153,7 @@ const projectLabel =
   &__cards {
     display: grid;
     grid-template-columns: 4fr 3fr 3fr 3fr;
-    gap: 1.5rem;
+    gap: var(--gap-5);
     width: 100%;
 
     @include below($bp-desktop) {
@@ -169,7 +169,7 @@ const projectLabel =
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--gap-5);
 
     :deep(.gm-stat-card) {
       padding: 2.5rem;
