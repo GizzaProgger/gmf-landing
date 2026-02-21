@@ -4,6 +4,7 @@
     <IndexOpportunities />
     <IndexHowItWorks />
     <IndexSpheres />
+    <IndexWhyMgf />
   </GmContainer>
 </template>
 
@@ -13,6 +14,7 @@ import HeroIndex from '~/components/Index/HeroIndex.vue'
 import IndexHowItWorks from '~/components/Index/IndexHowItWorks.vue'
 import IndexOpportunities from '~/components/Index/IndexOpportunities.vue'
 import IndexSpheres from '~/components/Index/IndexSpheres.vue'
+import IndexWhyMgf from '~/components/Index/IndexWhyMgf.vue'
 
 definePageMeta({
   layout: 'default'
