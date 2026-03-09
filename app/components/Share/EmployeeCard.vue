@@ -85,7 +85,6 @@ withDefaults(
 }
 
 .employee-card__name {
-  font-family: var(--font-family);
   font-size: var(--title-h4-size);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
@@ -94,9 +93,8 @@ withDefaults(
 }
 
 .employee-card__role {
-  font-family: var(--font-family);
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--main-color);
   margin: 0;
 }
 
