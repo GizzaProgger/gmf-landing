@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Nuxt / build
+.output
+.nuxt
+.nitro
+.data
+.cache
+dist
+
+# Git
+.git
+.gitignore
+
+# IDE & OS
+.DS_Store
+.fleet
+.idea
+*.log
+
+# Env (don't bake secrets into image)
+.env
+.env.*
+!.env.example
+
+# Docs & tests
+README.md
+*.md
+coverage
+.nyc_output
+__tests__
+*.test.*
+*.spec.*
