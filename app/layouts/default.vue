@@ -5,10 +5,18 @@
     <main>
       <slot />
     </main>
+    <div class="layout__footer">
+      <GmContainer>
+        <AppFooter />
+      </GmContainer>
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import GmContainer from '~/components/UI/GmContainer.vue'
+import AppFooter from '~/components/AppFooter.vue'
+</script>
 
 <style lang="scss" scoped>
 @use '~/assets/scss/vars' as *;
@@ -47,5 +55,10 @@ main {
   @include below($bp-desktop) {
     margin-top: 24px;
   }
+}
+
+.layout__footer {
+  position: relative;
+  z-index: 1;
 }
 </style>
