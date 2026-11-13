@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  ssr: false,
+  nitro: {
+    preset: 'github_pages'
+  },
+  app: {
+    baseURL: '/gmf-landing/'
+  },
+
   css: [
     '~/assets/scss/reset.scss',
     '~/assets/scss/global.scss'
